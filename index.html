@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Professor Hudson - Cursos de TI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?technology,code');
+            background-size: cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .course-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .course-card img {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .course-card .card-body {
+            background: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Professor Hudson</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Cursos Gratuitos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">HTML e CSS</a></li>
+                            <li><a class="dropdown-item" href="home.html">JavaScript</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#cursos">Cursos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#depoimentos">Depoimentos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/DALL·E\ 2025-01-30\ 10.57.20\ -\ A\ vibrant\ digital\ illustration\ representing\ the\ world\ of\ software\ development\,\ featuring\ key\ technologies\ like\ HTML\,\ CSS\,\ JavaScript\,\ Node.js\,\ React\,\ .webp'); background-size: cover; background-position: center;">
+        <div class="container">
+            <h1>Aprenda Desenvolvimento Web, Mobile e Banco de Dados</h1>
+            <p>Cursos com projetos reais, mentoria e certificação</p>
+        </div>
+    </header>
+    
+
+    <section id="cursos" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Nossos Cursos</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card course-card">
+                        <img src="https://source.unsplash.com/400x300/?coding" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Desenvolvimento Web</h5>
+                            <p class="card-text">Aprenda HTML, CSS, JavaScript e frameworks modernos.</p>
+                            <a href="#" class="btn btn-primary">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card course-card">
+                        <img src="https://source.unsplash.com/400x300/?database" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Banco de Dados</h5>
+                            <p class="card-text">Domine MySQL, PostgreSQL e NoSQL para projetos reais.</p>
+                            <a href="#" class="btn btn-primary">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card course-card">
+                        <img src="https://source.unsplash.com/400x300/?mobile" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Desenvolvimento Mobile</h5>
+                            <p class="card-text">Crie apps para Android e iOS com tecnologias modernas.</p>
+                            <a href="#" class="btn btn-primary">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="bg-light py-5">
+        <div class="container text-center">
+            <h2>O que nossos alunos dizem</h2>
+            <p class="fst-italic">"Os cursos do Professor Hudson transformaram minha carreira!" - João Silva</p>
+        </div>
+    </section>
+
+    <footer id="contato" class="bg-dark text-white text-center py-3">
+        <p>Siga nas redes sociais: <a href="#" class="text-white">LinkedIn</a> | <a href="#" class="text-white">GitHub</a></p>
+        <p>&copy; 2025 Professor Hudson. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
