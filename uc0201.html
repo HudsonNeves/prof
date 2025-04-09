@@ -1,187 +1,153 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Introdução à Gestão de Projetos em TI</title>
+  <title>Fundamentos da Gestão de Projetos - Aula 01</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f4f4f9;
+      padding: 0;
+      background: #f7f7f7;
       color: #333;
     }
-
     header {
-      background-color: #2c3e50;
-      color: white;
+      background: #004080;
+      color: #fff;
       padding: 20px;
       text-align: center;
     }
-
     header h1 {
       margin: 0;
-      font-size: 24px;
+      font-size: 1.8rem;
     }
-
     header p {
       margin: 5px 0 0;
-      font-size: 16px;
+      font-size: 1rem;
     }
-
     main {
       padding: 20px;
-      max-width: 1000px;
+      max-width: 900px;
       margin: auto;
+      background: #fff;
     }
-
     section {
-      background-color: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
     }
-
     h2 {
-      color: #2c3e50;
+      color: #004080;
     }
-
     ul {
       padding-left: 20px;
     }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
+    blockquote {
+      background: #e0f0ff;
+      padding: 10px;
+      border-left: 4px solid #004080;
+      font-style: italic;
     }
-
-    th, td {
-      padding: 8px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-
     footer {
       text-align: center;
-      font-size: 14px;
-      color: #999;
-      padding: 10px;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Introdução à Gestão de Projetos em TI</h1>
-    <p>Autor: Profº Hudson Neves</p>
+    <h1>Fundamentos da Gestão de Projetos em TI</h1>
+    <p>Profº Hudson Neves</p>
   </header>
-
   <main>
     <section>
-      <h2>Objetivos da Aula</h2>
+      <h2>1. O que é Gestão de Projetos?</h2>
+      <p>
+        Gestão de projetos é a aplicação de conhecimentos, habilidades, ferramentas e técnicas às atividades do projeto para atender aos seus requisitos. Envolve planejamento, execução, monitoramento, controle e encerramento de tarefas para atingir objetivos específicos dentro de um prazo, custo e escopo definidos.
+      </p>
+      <blockquote>
+        "Sem planejamento, não há controle. Sem controle, não há sucesso no projeto."
+      </blockquote>
+    </section>
+
+    <section>
+      <h2>2. Linha do Tempo da Gestão de Projetos</h2>
       <ul>
-        <li>Compreender o que é um projeto</li>
-        <li>Diferenciar projeto de operação</li>
-        <li>Entender os fundamentos da gestão de projetos</li>
-        <li>Conhecer o ciclo de vida de um projeto</li>
-        <li>Identificar o papel da gestão de projetos na área de TI</li>
+        <li><strong>1950:</strong> Surgem práticas formais com foco em engenharia e defesa</li>
+        <li><strong>1969:</strong> Fundação do PMI (Project Management Institute)</li>
+        <li><strong>1980-90:</strong> Consolidação do PMBOK e PRINCE2</li>
+        <li><strong>2001:</strong> Manifesto Ágil transforma a gestão de projetos em TI</li>
       </ul>
     </section>
 
     <section>
-      <h2>O que é um Projeto?</h2>
-      <p>Um projeto é um esforço temporário empreendido para criar um produto, serviço ou resultado único. Ele tem início e fim definidos e resulta em algo novo ou com valor agregado. Fonte: PMI.</p>
+      <h2>3. Por que a Gestão de Projetos é importante?</h2>
+      <p>
+        A gestão de projetos garante que os objetivos sejam atingidos de forma eficiente. Em TI, ela ajuda a evitar atrasos, controlar orçamento, identificar riscos e promover entregas com qualidade.
+      </p>
     </section>
 
     <section>
-      <h2>Projeto vs. Operação</h2>
-      <table>
-        <tr>
-          <th>Característica</th>
-          <th>Projeto</th>
-          <th>Operação</th>
-        </tr>
-        <tr>
-          <td>Duração</td>
-          <td>Temporária</td>
-          <td>Contínua</td>
-        </tr>
-        <tr>
-          <td>Objetivo</td>
-          <td>Criar algo novo</td>
-          <td>Manter e operar</td>
-        </tr>
-        <tr>
-          <td>Repetitividade</td>
-          <td>Não repetitivo</td>
-          <td>Repetitivo</td>
-        </tr>
-        <tr>
-          <td>Exemplo (TI)</td>
-          <td>Desenvolvimento de um sistema</td>
-          <td>Suporte técnico contínuo</td>
-        </tr>
-      </table>
+      <h2>4. Exemplo Prático</h2>
+      <p><strong>Projeto sem gestão:</strong> um site criado sem prazos ou escopo definido — resultado: atraso, retrabalho, cliente insatisfeito.</p>
+      <p><strong>Projeto com gestão:</strong> planejamento de etapas, definição de tarefas e prazos, reuniões de alinhamento — resultado: entrega no prazo e com qualidade.</p>
     </section>
 
     <section>
-      <h2>Por que Gerenciar Projetos?</h2>
+      <h2>5. Ferramentas de Gestão mais Utilizadas</h2>
       <ul>
-        <li>Evita desperdício de tempo e recursos</li>
-        <li>Ajuda no cumprimento de prazos e orçamento</li>
-        <li>Garante a entrega de valor ao cliente</li>
-        <li>Facilita a comunicação e alinhamento da equipe</li>
+        <li><strong>Trello:</strong> organização visual por cartões</li>
+        <li><strong>Jira:</strong> ideal para projetos ágeis em empresas</li>
+        <li><strong>Asana:</strong> colaboração em tarefas e metas</li>
+        <li><strong>Microsoft Project:</strong> controle avançado de cronogramas</li>
       </ul>
     </section>
 
     <section>
-      <h2>Ciclo de Vida de um Projeto</h2>
-      <ol>
-        <li><strong>Iniciação</strong> – Entendimento do problema ou oportunidade</li>
-        <li><strong>Planejamento</strong> – Definição de escopo, prazos, recursos</li>
-        <li><strong>Execução</strong> – Colocar o projeto em prática</li>
-        <li><strong>Monitoramento e Controle</strong> – Acompanhar andamento</li>
-        <li><strong>Encerramento</strong> – Concluir e avaliar o projeto</li>
-      </ol>
-    </section>
-
-    <section>
-      <h2>O Gerente de Projetos</h2>
-      <p>Responsável por planejar, executar e controlar o projeto, sendo o elo entre equipe, cliente e stakeholders.</p>
-    </section>
-
-    <section>
-      <h2>Gestão de Projetos em TI</h2>
-      <p>Projetos de TI envolvem alta complexidade e mudanças rápidas. A gestão ajuda a manter o foco, a qualidade e a entrega de valor.</p>
-      <p><strong>Exemplos:</strong> Desenvolvimento de aplicativos, implantação de sistemas, migração para a nuvem.</p>
-    </section>
-
-    <section>
-      <h2>Ferramentas Populares</h2>
+      <h2>6. Mitos sobre Gestão de Projetos</h2>
       <ul>
-        <li>Trello</li>
-        <li>Jira</li>
-        <li>Microsoft Project</li>
-        <li>Asana</li>
-        <li>Notion</li>
+        <li>“É só papelada” — na verdade, é foco em resultados</li>
+        <li>“Todo projeto atrasa” — com gestão adequada, isso pode ser evitado</li>
+        <li>“Agile resolve tudo” — cada projeto exige uma abordagem específica</li>
       </ul>
     </section>
 
     <section>
-      <h2>Atividade para a Turma</h2>
-      <p><strong>Em dupla:</strong> Pesquise um projeto real de TI e identifique:</p>
+      <h2>7. Glossário Essencial</h2>
       <ul>
-        <li>O objetivo do projeto</li>
-        <li>O tempo de execução</li>
-        <li>Os desafios enfrentados</li>
-        <li>O resultado final</li>
+        <li><strong>Stakeholder:</strong> partes interessadas no projeto</li>
+        <li><strong>Escopo:</strong> o que será entregue</li>
+        <li><strong>Milestone:</strong> marcos importantes</li>
+        <li><strong>Deadline:</strong> prazo limite</li>
+        <li><strong>Entregável:</strong> resultado tangível</li>
+        <li><strong>Risco:</strong> incerteza que pode impactar o projeto</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>8. Curiosidades</h2>
+      <p>
+        A gestão de projetos foi usada em larga escala na NASA e na construção de megaprojetos. Os princípios modernos, no entanto, estão acessíveis para qualquer projeto, até mesmo pessoais.
+      </p>
+    </section>
+
+    <section>
+      <h2>9. Atividade Prática</h2>
+      <p>
+        Crie um mini-projeto pessoal (ex: organizar uma festa, criar um canal no YouTube, montar um PC gamer). Escreva:
+      </p>
+      <ul>
+        <li>Objetivo do projeto</li>
+        <li>Stakeholders envolvidos</li>
+        <li>Entregas previstas</li>
+        <li>Prazo</li>
+        <li>Riscos que podem ocorrer</li>
       </ul>
     </section>
   </main>
-
   <footer>
-    &copy; 2025 Profº Hudson Neves | Fundamentos da Gestão de Projetos
+    &copy; 2025 Profº Hudson Neves - Todos os direitos reservados
   </footer>
 </body>
 </html>
