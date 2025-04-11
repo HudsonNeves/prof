@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia Jira - E-commerce Esportivo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      color: #0055a5;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .author {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 30px;
+    }
+    .badge {
+      background-color: #0055a5;
+      color: #fff;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 0.8rem;
+    }
+    .backlog {
+      margin-top: 40px;
+    }
+    .story {
+      background-color: #f1f8ff;
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      border-left: 4px solid #007bff;
+    }
+    .story h3 {
+      margin: 0 0 5px;
+    }
+    .story p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Guia de Criação do Product Backlog no Jira</h1>
+    <div class="author">Autor: Prof. Hudson Neves</div>
+
+    <h2>1. Criar Conta no Jira</h2>
+    <ul>
+      <li>Acesse: <a href="https://www.atlassian.com/software/jira" target="_blank">https://www.atlassian.com/software/jira</a></li>
+      <li>Crie uma conta gratuita com e-mail ou Google</li>
+    </ul>
+
+    <h2>2. Criar Projeto Scrum</h2>
+    <ul>
+      <li>Clique em <strong>Create Project</strong></li>
+      <li>Escolha o template <strong>Scrum</strong></li>
+      <li>Nomeie: <strong>E-commerce Esportivo</strong></li>
+    </ul>
+
+    <h2>3. Criar Épicos</h2>
+    <ul>
+      <li>Acesse <strong>Backlog</strong></li>
+      <li>Clique em <strong>+ Create Epic</strong></li>
+      <li>Adicione: Cadastro de Produtos, Autenticação, Carrinho, Pedidos, Pagamento, UI/UX, Testes</li>
+    </ul>
+
+    <h2>4. Criar Histórias de Usuário</h2>
+    <ul>
+      <li>Exemplo: <strong>US01 - Cadastro de Produto</strong></li>
+      <li><em>"Como administrador, desejo adicionar produtos para venda no site"</em></li>
+      <li>Associe ao épico correspondente</li>
+    </ul>
+
+    <h2>5. Organizar Backlog</h2>
+    <ul>
+      <li>Arraste as histórias conforme a prioridade</li>
+      <li>Adicione estimativas (Story Points ou tempo)</li>
+    </ul>
+
+    <h2>6. Criar e Iniciar Sprint</h2>
+    <ul>
+      <li>Clique em <strong>Create Sprint</strong></li>
+      <li>Adicione as histórias desejadas</li>
+      <li>Defina a duração e inicie</li>
+    </ul>
+
+    <h2>7. Acompanhar o Quadro Scrum</h2>
+    <ul>
+      <li>Visualize o progresso em <strong>To Do → In Progress → Done</strong></li>
+      <li>Use o <strong>Burndown Chart</strong> para acompanhar a sprint</li>
+    </ul>
+
+    <h2>Dicas para Aula</h2>
+    <ul>
+      <li>Divida os alunos em grupos com projetos no Jira</li>
+      <li>Solicite relatórios com prints das sprints e histórias</li>
+      <li>Realize simulações de cerimônias Scrum: Planning, Daily, Review, Retrospective</li>
+    </ul>
+
+    <div class="backlog">
+      <h2>🔍 Simulação de Product Backlog</h2>
+      <div class="story">
+        <h3>US01 - Cadastro de Produto</h3>
+        <p>Como administrador, desejo adicionar novos produtos para venda no site.</p>
+      </div>
+      <div class="story">
+        <h3>US02 - Edição/Remoção de Produto</h3>
+        <p>Como administrador, desejo editar ou remover produtos cadastrados.</p>
+      </div>
+      <div class="story">
+        <h3>US03 - Cadastro de Usuário</h3>
+        <p>Como cliente, desejo criar uma conta para realizar compras.</p>
+      </div>
+      <div class="story">
+        <h3>US04 - Login de Usuário</h3>
+        <p>Como cliente, desejo fazer login para acessar minha conta.</p>
+      </div>
+      <div class="story">
+        <h3>US05 - Adicionar ao Carrinho</h3>
+        <p>Como cliente, desejo adicionar produtos ao carrinho.</p>
+      </div>
+      <div class="story">
+        <h3>US06 - Visualizar Carrinho</h3>
+        <p>Como cliente, desejo visualizar os itens adicionados ao carrinho com preço total.</p>
+      </div>
+      <div class="story">
+        <h3>US07 - Remover do Carrinho</h3>
+        <p>Como cliente, desejo remover produtos do carrinho.</p>
+      </div>
+      <div class="story">
+        <h3>US08 - Finalizar Pedido</h3>
+        <p>Como cliente, desejo finalizar a compra e gerar um pedido.</p>
+      </div>
+      <div class="story">
+        <h3>US09 - Visualizar Pedidos</h3>
+        <p>Como administrador, desejo visualizar os pedidos realizados.</p>
+      </div>
+      <div class="story">
+        <h3>US10 - Selecionar Forma de Pagamento</h3>
+        <p>Como cliente, desejo escolher a forma de pagamento (Pix, Cartão).</p>
+      </div>
+      <div class="story">
+        <h3>US11 - Interface Responsiva</h3>
+        <p>Como usuário, desejo acessar o site pelo celular com boa experiência.</p>
+      </div>
+      <div class="story">
+        <h3>US12 - Testar Funcionalidades</h3>
+        <p>Como equipe, queremos testar os principais fluxos para garantir a qualidade.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
