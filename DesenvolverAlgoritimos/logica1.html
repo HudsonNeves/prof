@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolver Algoritmos - Aula 2</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #0f0f0f;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+        header h2 {
+            font-size: 1.25rem;
+            margin: 10px 0 0;
+        }
+        main {
+            flex: 1;
+            padding: 30px 20px;
+            background-color: #fff;
+            border-top: 2px solid #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        main:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #333;
+            font-size: 1.75rem;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: "Courier New", monospace;
+            overflow-x: auto;
+            font-size: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+        .highlight {
+            color: #ff5733;
+        }
+        footer {
+            background-color: #141414;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.875rem;
+            margin-top: 30px;
+        }
+        .recommendations {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        .recommendations ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .recommendations li {
+            margin: 8px 0;
+        }
+        .button {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #007bff;
+            transform: translateY(-2px);
+        }
+        .content {
+            margin-bottom: 40px;
+        }
+        .alert {
+            background-color: #ffeb3b;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .highlighted-code {
+            background-color: #f4f4f4;
+            border-left: 4px solid #007bff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Desenvolver Algoritmos</h1>
+        <p>Professor Autor: Hudson Neves</p>
+    </header>
+    
+    <main>
+        <div class="content">
+            <h2>Objetivo da Aula</h2>
+            <p>Hoje, aprenderemos as <strong>instruções sequenciais</strong>, um dos pilares do desenvolvimento de algoritmos. Com elas, você será capaz de executar uma série de operações na sequência em que foram programadas.</p>
+        </div>
+        
+        <div class="content">
+            <h2>O que são Instruções Sequenciais?</h2>
+            <p>As instruções sequenciais são aquelas que executam comandos na ordem exata em que são apresentadas no código. Elas formam a estrutura mais simples de um algoritmo, onde não há desvios ou tomadas de decisão.</p>
+            <p>Essas instruções são essenciais, pois são a base para qualquer algoritmo e programação. Com elas, podemos executar tarefas simples, como ler entradas, processar dados e exibir resultados.</p>
+        </div>
+
+        <div class="content">
+            <h2>Exemplo Prático de Instruções Sequenciais</h2>
+            <p>Vamos ver um exemplo simples no <strong>Visualg</strong> para entender como as instruções sequenciais funcionam:</p>
+            
+            <pre class="highlighted-code">
+Algoritmo "Exemplo_Sequencial"
+    // Curso       : Técnico em Desenvolvimento de Sistemas
+    // Professor   : Hudson Neves
+    // Descrição   : Exemplo de instruções sequenciais
+
+Var
+    numero : Inteiro
+
+Inicio
+    escreva("Digite um número: ")
+    leia(numero)
+    escreva("Você digitou: ", numero)
+Fimalgoritmo
+            </pre>
+            
+            <p>Este código é uma simples sequência de instruções. Ele pede ao usuário para digitar um número e, em seguida, exibe o número digitado.</p>
+        </div>
+
+        <div class="content">
+            <h2>Por que as Instruções Sequenciais São Importantes?</h2>
+            <p>As instruções sequenciais são o ponto de partida para o desenvolvimento de qualquer programa. Ao dominar essa parte da programação, você será capaz de entender melhor os conceitos de controle de fluxo, como condições e loops.</p>
+            <p>Elas são fundamentais para a construção de algoritmos mais complexos, tornando-se a fundação para um aprendizado eficaz em programação.</p>
+        </div>
+
+        <div class="recommendations">
+            <h2>Recomendações de Leitura</h2>
+            <p>Para expandir seus conhecimentos, confira as seguintes fontes de leitura:</p>
+            <ul>
+                <li><strong>Livro:</strong> "Algoritmos: Teoria e Prática" - Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein.</li>
+                <li><strong>Artigo:</strong> "Introdução à Lógica de Programação e Algoritmos" - Artigo no site <a href="https://www.devmedia.com.br" class="highlight">DevMedia</a>.</li>
+                <li><strong>Site:</strong> "Visualg - Ambiente de Programação" - <a href="http://www.visualg.com.br" class="highlight">Visualg</a></li>
+            </ul>
+        </div>
+
+        <a href="#" class="button">Próxima Aula</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Professor Hudson Neves - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

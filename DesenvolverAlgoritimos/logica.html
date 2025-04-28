@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desenvolver Algoritmos - Aula 01</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #000000;
+      color: #ffffff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.2rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      border-left: 5px solid #000000;
+      padding-left: 10px;
+      color: #000000;
+      font-size: 1.8rem;
+    }
+
+    p, li {
+      font-size: 1.1rem;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+      font-size: 0.9rem;
+      color: #555555;
+    }
+
+    .highlight {
+      background-color: #f7f7f7;
+      padding: 10px;
+      border-left: 4px solid #000000;
+      margin: 20px 0;
+    }
+
+    .quote {
+      font-style: italic;
+      background-color: #eeeeee;
+      padding: 15px;
+      border-left: 4px solid #666666;
+      margin: 20px 0;
+    }
+
+    .recommendations {
+      background-color: #f9f9f9;
+      padding: 20px;
+      margin-top: 40px;
+      border-radius: 8px;
+      border: 1px solid #cccccc;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      p, li {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Desenvolver Algoritmos</h1>
+  <p>Professor Autor: Hudson Neves</p>
+</header>
+
+<div class="container">
+
+  <section>
+    <h2>Situação de Aprendizagem</h2>
+    <p>Os alunos atuarão como desenvolvedores iniciantes de uma agência fictícia chamada <strong>"Destino Certo"</strong>. Sua missão é criar soluções computacionais para modernizar processos como reservas, cálculos de pacotes e geração de relatórios, utilizando lógica de programação como base de todas as soluções. Cada desafio foi pensado para simular cenários reais do mundo corporativo.</p>
+  </section>
+
+  <section>
+    <h2>Introdução: Por que Lógica é a Base de Tudo?</h2>
+    <p>Programar é organizar pensamentos para resolver problemas. Quando conseguimos estruturar raciocínios de maneira lógica e clara, a programação se torna natural e prazerosa. Ao dominar a lógica, o aluno será capaz de:</p>
+    <ul>
+      <li>Construir algoritmos eficientes e inteligentes;</li>
+      <li>Adaptar soluções a diferentes linguagens de programação;</li>
+      <li>Desenvolver o pensamento crítico e a capacidade de análise.</li>
+    </ul>
+    <div class="highlight">
+      <strong>Resumo:</strong> <br>
+      Lógica é o alicerce; linguagem é a ferramenta. Sem um pensamento organizado, mesmo o melhor código falhará.
+    </div>
+  </section>
+
+  <section>
+    <h2>O que é Lógica de Programação?</h2>
+    <p>Lógica de programação é a capacidade de planejar uma sequência de ações que resolvam um problema de forma precisa. Um computador precisa de instruções explícitas e ordenadas, pois ele não "interpreta" como um ser humano: ele executa exatamente o que lhe for pedido.</p>
+
+    <div class="highlight">
+      <strong>Exemplo:</strong> <br>
+      Como ensinar um robô a fazer um sanduíche:<br>
+      1. Pegar duas fatias de pão;<br>
+      2. Colocar queijo entre as fatias;<br>
+      3. Fechar o sanduíche.<br>
+      4. Servir no prato.
+    </div>
+
+    <p>Se não formos claros e sequenciais, o robô poderá cometer erros, como colocar o queijo fora do pão ou esquecer o prato.</p>
+  </section>
+
+  <section>
+    <h2>Por que começar pela lógica?</h2>
+    <p>O domínio da lógica permite:</p>
+    <ul>
+      <li>Resolver problemas de forma eficiente e criativa;</li>
+      <li>Reduzir erros de programação (bugs);</li>
+      <li>Melhorar o desempenho dos programas criados;</li>
+      <li>Facilitar o aprendizado de novas linguagens e tecnologias no futuro.</li>
+    </ul>
+
+    <div class="quote">
+      "Linguagens mudam. A lógica é eterna. Quem pensa bem, programa bem."
+    </div>
+  </section>
+
+  <section>
+    <h2>O que é um Algoritmo?</h2>
+    <p>Algoritmo é uma série de passos organizados para solucionar um problema. Para criar um algoritmo eficiente, cada passo deve ser:</p>
+    <ul>
+      <li>Claro e compreensível;</li>
+      <li>Executável em tempo finito;</li>
+      <li>Orientado para atingir um objetivo específico.</li>
+    </ul>
+
+    <div class="highlight">
+      <strong>Exemplo cotidiano:</strong> <br>
+      Algoritmo para escovar os dentes:<br>
+      1. Pegar a escova;<br>
+      2. Colocar pasta dental;<br>
+      3. Molhar a escova;<br>
+      4. Escovar dentes superiores e inferiores circularmente;<br>
+      5. Bochechar e enxaguar.
+    </div>
+  </section>
+
+  <section>
+    <h2>Exercício Prático</h2>
+    <p>Escolha uma atividade do seu dia a dia e descreva detalhadamente os passos, como se estivesse programando um robô que não tem "bom senso". Atenção aos detalhes!</p>
+    <p><strong>Objetivo:</strong> Treinar a transformação de pensamentos em comandos sequenciais e objetivos.</p>
+  </section>
+
+  <section>
+    <h2>Conclusão</h2>
+    <p>Dominar a lógica de programação é a chave para crescer como programador, independentemente da linguagem ou da tecnologia. Quem pensa logicamente, cria soluções de qualidade e se torna um profissional valorizado.</p>
+
+    <div class="quote">
+      "Programar é ensinar a máquina a seguir nossos pensamentos lógicos. Se organizarmos bem nossos pensamentos, programar se torna simples e poderoso."
+    </div>
+  </section>
+
+  <section class="recommendations">
+    <h2>Recomendações de Leitura</h2>
+    <ul>
+      <li><strong>"Introdução à Programação"</strong> - Joyce Farrell</li>
+      <li><strong>"Algoritmos: Teoria e Prática"</strong> - Thomas H. Cormen</li>
+      <li><strong>"Pense em Algoritmos"</strong> - Allen B. Downey</li>
+    </ul>
+
+    <h2>Fontes Bibliográficas</h2>
+    <ul>
+      <li>Farrell, Joyce. <em>Introduction to Programming Using Logic</em>. Cengage Learning.</li>
+      <li>Cormen, Thomas et al. <em>Introduction to Algorithms</em>. MIT Press.</li>
+      <li>Downey, Allen. <em>Think Like a Programmer</em>. Green Tea Press.</li>
+    </ul>
+  </section>
+
+</div>
+
+<footer>
+  Desenvolvido por Profº Hudson Neves | Disciplina: Desenvolver Algoritmos
+</footer>
+
+</body>
+</html>
