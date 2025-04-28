@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desenvolver Algoritmos - Aula 3: Fluxogramas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #2b2b2b;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+    .content {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: white;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .content h2 {
+      font-size: 2em;
+      color: #2b2b2b;
+    }
+    .content p {
+      font-size: 1.1em;
+      color: #666;
+    }
+    .content pre {
+      background-color: #f1f1f1;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 1.1em;
+      white-space: pre-wrap;
+    }
+    footer {
+      text-align: center;
+      background-color: #2b2b2b;
+      color: white;
+      padding: 10px;
+    }
+    .highlight {
+      color: #0073e6;
+    }
+    .code-box {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Desenvolver Algoritmos</h1>
+    <p>Professor Autor: Hudson Neves</p>
+  </header>
+
+  <div class="content">
+    <h2>Aula 3: Algoritmos e Fluxogramas</h2>
+
+    <p>Bem-vindos à nossa terceira aula! Hoje vamos aprender sobre **algoritmos** e como representá-los de maneira visual utilizando **fluxogramas**.</p>
+
+    <h3>1. O que é um Algoritmo?</h3>
+    <p>Antes de começarmos a desenhar fluxogramas, é essencial entender o que é um **algoritmo**. Em termos simples, um algoritmo é uma sequência finita de passos ou instruções que resolvem um problema. Todo algoritmo tem um início, um meio e um fim.</p>
+
+    <h3>2. Por que usar Fluxogramas?</h3>
+    <p>Os fluxogramas são uma <span class="highlight">representação gráfica</span> de um algoritmo. Eles ajudam a visualizar de forma clara e simples o fluxo de execução de um programa. Usamos fluxogramas para:</p>
+    <ul>
+      <li><strong>Planejar</strong> como o algoritmo vai funcionar.</li>
+      <li><strong>Documentar</strong> e comunicar soluções de forma visual.</li>
+      <li><strong>Entender</strong> o algoritmo de maneira mais intuitiva.</li>
+    </ul>
+
+    <h3>3. Símbolos Comuns de Fluxogramas</h3>
+    <p>A seguir, vamos conhecer os principais símbolos utilizados para representar um fluxograma:</p>
+    <ul>
+      <li><strong>Retângulo (Processo):</strong> Representa uma ação ou operação no algoritmo (como uma atribuição ou um cálculo).</li>
+      <li><strong>Paralelogramo (Entrada/Saída):</strong> Representa a entrada de dados ou a saída de resultados.</li>
+      <li><strong>Losango (Decisão):</strong> Representa uma decisão ou condição, onde o algoritmo segue um caminho ou outro dependendo do resultado da condição.</li>
+      <li><strong>Setas:</strong> Indicam o fluxo de execução do algoritmo.</li>
+    </ul>
+
+    <h3>4. Como Criar um Fluxograma</h3>
+    <p>Agora que sabemos o que é um algoritmo e os símbolos usados em fluxogramas, vamos aprender a criar um fluxograma simples.</p>
+    <p><strong>Exemplo:</strong> Criando um fluxograma para um algoritmo que verifica se um número é par ou ímpar.</p>
+
+    <div class="code-box">
+      <pre>
++--------------------------+
+|        Início             |
++--------------------------+
+          |
+          v
++--------------------------+
+|  Solicitar número (N)     |
++--------------------------+
+          |
+          v
++--------------------------+
+|  N % 2 == 0?              |----> Não ----> [Mostrar "Ímpar"] ---> Fim
++--------------------------+
+          |
+          v
++--------------------------+
+|  Mostrar "Par"            |
++--------------------------+
+          |
+          v
++--------------------------+
+|        Fim                |
++--------------------------+
+      </pre>
+    </div>
+
+    <h3>5. Como Lermos o Fluxograma</h3>
+    <p>No fluxograma acima, começamos no início, depois pedimos para o usuário inserir um número. Em seguida, o algoritmo verifica se o número é divisível por 2. Se for, ele exibe "Par", caso contrário, exibe "Ímpar". O fluxo então termina.</p>
+
+    <h3>6. Atividade Prática</h3>
+    <p>Agora, é hora de você criar seu próprio fluxograma. O desafio será criar um fluxograma para o seguinte algoritmo:</p>
+    <p><strong>Algoritmo:</strong> Calcular a média de três números inseridos pelo usuário e informar se a média é maior ou menor que 7.</p>
+    <ul>
+      <li>Solicitar três números (N1, N2, N3) ao usuário.</li>
+      <li>Calcular a média dos três números.</li>
+      <li>Verificar se a média é maior ou menor que 7.</li>
+      <li>Exibir a mensagem correspondente (ex.: "Média maior que 7" ou "Média menor que 7").</li>
+    </ul>
+
+    <h3>7. Conclusão</h3>
+    <p>Nesta aula, você aprendeu o que são algoritmos e como representá-los usando fluxogramas. Os fluxogramas são uma excelente ferramenta para <span class="highlight">planejar</span>, <span class="highlight">visualizar</span> e <span class="highlight">comunicar</span> algoritmos de maneira clara. No futuro, ao aprender a programar em uma linguagem específica, como o <span class="highlight">Visualg</span>, você será capaz de transformar esses fluxogramas em código real. Lembre-se de que entender o fluxo do algoritmo é essencial para escrever programas eficientes e funcionais.</p>
+
+    <h3>8. Próximos Passos</h3>
+    <p>Na próxima aula, vamos trabalhar com <strong>estruturas de controle</strong> (como <strong>condicionais</strong> e <strong>laços de repetição</strong>) para criar fluxogramas mais complexos.</p>
+
+    <h3>9. Recomendações de Leitura:</h3>
+    <ul>
+      <li><strong>Introdução à Lógica de Programação e Algoritmos</strong> – Ed. Pearson.</li>
+      <li><strong>Algoritmos: Teoria e Prática</strong> – Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein.</li>
+      <li><strong>Fundamentos de Programação</strong> – Douglas A. V. Machado.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 - Desenvolvido por Professor Hudson Neves</p>
+  </footer>
+</body>
+</html>
