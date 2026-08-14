@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia do Ciclo de Vida do Software com Scrum</title>
+  
+  <style>
+    /* --- RESET BÁSICO --- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f8fafc;
+      color: #334155;
+      line-height: 1.6;
+    }
+
+    /* --- ESTRUTURA PRINCIPAL COM FLEXBOX --- */
+    .app-container {
+      display: flex;
+      flex-direction: row; /* Alinha Menu e Conteúdo lado a lado no Desktop */
+      min-height: 100vh;
+    }
+
+    /* --- SIDEBAR (MENU LATERAL) --- */
+    .sidebar {
+      width: 280px;
+      min-width: 280px;
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 2rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+    }
+
+    .sidebar-header {
+      margin-bottom: 2rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #2563eb;
+      color: #ffffff;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 12px;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .sidebar-header h2 {
+      font-size: 1.2rem;
+      margin-top: 0.6rem;
+      color: #f8fafc;
+      line-height: 1.3;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .nav-item {
+      color: #94a3b8;
+      text-decoration: none;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-item:hover {
+      background-color: #1e293b;
+      color: #38bdf8;
+      transform: translateX(4px);
+    }
+
+    /* --- CONTEÚDO PRINCIPAL --- */
+    .main-content {
+      flex: 1; /* Ocupa todo o espaço restante */
+      padding: 2.5rem 3rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .hero-header {
+      margin-bottom: 2.5rem;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 1.5rem;
+    }
+
+    .hero-header h1 {
+      font-size: 2.1rem;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #64748b;
+      font-weight: 400;
+    }
+
+    /* --- CARDS DE CAPÍTULOS --- */
+    .chapter-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .chapter-card h2 {
+      color: #0f172a;
+      margin-bottom: 1.2rem;
+      font-size: 1.4rem;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 0.5rem;
+    }
+
+    .chapter-card h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: #1e293b;
+      font-size: 1.15rem;
+    }
+
+    .chapter-card p {
+      margin-bottom: 1rem;
+      color: #475569;
+    }
+
+    /* --- ELEMENTOS DE DESTAQUE --- */
+    .callout-box {
+      background-color: #eff6ff;
+      border-left: 4px solid #2563eb;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      border-radius: 0 8px 8px 0;
+      color: #1e40af;
+      font-size: 0.95rem;
+    }
+
+    .cards-grid {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap; /* Flex para cartões internos */
+    }
+
+    .info-card {
+      flex: 1;
+      min-width: 240px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      padding: 1.25rem;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .info-card h4 {
+      color: #2563eb;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .info-card p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .example {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: #64748b;
+      font-style: italic;
+      background: #f1f5f9;
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .requirements-checklist {
+      margin: 1rem 0 1rem 1.25rem;
+      color: #475569;
+    }
+
+    .requirements-checklist li {
+      margin-bottom: 0.6rem;
+      padding-left: 0.25rem;
+    }
+
+    .requirements-checklist li::marker {
+      color: #2563eb;
+    }
+
+    .formula-box {
+      background: #0f172a;
+      color: #38bdf8;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      font-family: monospace;
+      font-size: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* --- TABELA RESPONSIVA VIA FLEX/OVERFLOW --- */
+    .table-container {
+      overflow-x: auto;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    th, td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* --- PIRÂMIDE EM FLEXBOX --- */
+    .flex-pyramid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .pyramid-level {
+      color: white;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 0.88rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      transition: width 0.3s ease;
+    }
+
+    .level-e2e { width: 45%; background-color: #ef4444; }
+    .level-integration { width: 72%; background-color: #f59e0b; }
+    .level-unit { width: 100%; background-color: #10b981; }
+
+    /* --- KANBAN PREVIEW EM FLEXBOX --- */
+    .kanban-preview {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .kanban-col {
+      flex: 1;
+      min-width: 130px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      padding: 0.85rem 0.5rem;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: #475569;
+    }
+
+    .kanban-col.done {
+      background: #dcfce7;
+      border-color: #bbf7d0;
+      color: #15803d;
+    }
+
+    /* --- RODAPÉ --- */
+    .footer {
+      text-align: center;
+      padding: 2rem 0 1rem;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      border-top: 1px solid #e2e8f0;
+      margin-top: 2rem;
+    }
+
+    /* --- RESPONSIVIDADE COM MEDIA QUERIES (MOBILE) --- */
+    @media (max-width: 768px) {
+      .app-container {
+        flex-direction: column; /* Muda o layout de linha para coluna no celular */
+      }
+
+      .sidebar {
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1.5rem;
+      }
+
+      .sidebar-nav {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .main-content {
+        padding: 1.5rem 1rem;
+      }
+
+      .hero-header h1 {
+        font-size: 1.6rem;
+      }
+
+      .cards-grid {
+        flex-direction: column;
+      }
+
+      .level-e2e, .level-integration, .level-unit {
+        width: 100%; /* Adapta a pirâmide para cobrir toda a largura no celular */
+      }
+
+      .kanban-preview {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Layout Principal em Flexbox -->
+  <div class="app-container">
+    
+    <!-- Navegação Lateral (Sidebar) -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="badge">Profº Hudson Neves</span>
+        <h2>Ciclo de Vida com Scrum</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#introducao" class="nav-item">00. Introdução</a>
+        <a href="#capitulo1" class="nav-item">01. Requisitos no Scrum</a>
+        <a href="#capitulo2" class="nav-item">02. Arquitetura na Sprint</a>
+        <a href="#capitulo3" class="nav-item">03. Incremento & Qualidade</a>
+        <a href="#capitulo4" class="nav-item">04. Entrega & DevOps</a>
+        <a href="#capitulo5" class="nav-item">05. Framework Scrum</a>
+        <a href="#conclusao" class="nav-item">06. Conclusão</a>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo Principal do eBook -->
+    <main class="main-content">
+      
+      <!-- Cabeçalho Principal -->
+      <header class="hero-header">
+        <h1>📘 CICLO DE VIDA DO SOFTWARE COM SCRUM</h1>
+        <p class="subtitle">Do Objetivo do Produto ao Incremento: entrega de valor com inspeção e adaptação</p>
+      </header>
+
+      <!-- Introdução -->
+      <section id="introducao" class="chapter-card">
+        <h2>🎯 Introdução: SDLC e Scrum</h2>
+        <p>Desenvolver software <strong>não é apenas escrever código</strong>. É transformar problemas reais em valor por meio de descoberta, construção, validação, entrega e aprendizado.</p>
+        <p>O <strong>SDLC</strong> (<em>Software Development Life Cycle</em>) reúne atividades necessárias para criar e evoluir um software. O <strong>Scrum</strong> é um framework leve para gerar valor por meio de soluções adaptativas para problemas complexos. Em vez de executar grandes fases uma única vez, o Scrum organiza o trabalho em <strong>Sprints</strong> de até um mês, produzindo ao menos um Incremento útil e utilizável a cada Sprint.</p>
+        
+        <div class="callout-box">
+          <strong>💡 Fundamentos:</strong> transparência, inspeção e adaptação sustentam o empirismo do Scrum. Seus valores são Compromisso, Foco, Abertura, Respeito e Coragem.
+        </div>
+      </section>
+
+      <!-- Capítulo 1 -->
+      <section id="capitulo1" class="chapter-card">
+        <h2>🔍 Capítulo 1: Requisitos no Scrum</h2>
+        <p>No Scrum, as necessidades do produto são descobertas e detalhadas continuamente. O <strong>Product Owner</strong> maximiza o valor do produto e gerencia efetivamente o <strong>Product Backlog</strong>, com a colaboração dos Developers, usuários, clientes e demais partes interessadas.</p>
+
+        <div class="callout-box">
+          <strong>Importante:</strong> o Scrum não define uma fase isolada de levantamento de requisitos nem exige documentos ou User Stories. O trabalho começa com o <strong>Objetivo do Produto</strong> e evolui continuamente por meio do Product Backlog, do feedback e do aprendizado obtido a cada Sprint.
+        </div>
+        
+        <h3>1.1 Requisitos Funcionais (RF) vs. Não-Funcionais (RNF)</h3>
+        <div class="cards-grid">
+          <div class="info-card">
+            <h4>Requisitos Funcionais</h4>
+            <p>O que o sistema <strong>FAZ</strong> (comportamento e funcionalidades).</p>
+            <span class="example">Exemplo de item do Product Backlog: "Permitir que o usuário transfira dinheiro via PIX."</span>
+          </div>
+          <div class="info-card">
+            <h4>Requisitos Não-Funcionais</h4>
+            <p>Como o sistema <strong>SE COMPORTA</strong> (desempenho, segurança, usabilidade).</p>
+            <span class="example">Exemplo de restrição: "Concluir 95% das transferências PIX em até 2 segundos."</span>
+          </div>
+        </div>
+
+        <h3>1.2 Descoberta de Necessidades no Scrum</h3>
+        <p>O Product Owner pode combinar técnicas de elicitação com a colaboração do Scrum Team. Os resultados não formam uma especificação imutável: tornam-se informações para criar, ordenar e refinar os itens do Product Backlog.</p>
+
+        <div class="cards-grid">
+          <div class="info-card">
+            <h4>Entrevistas</h4>
+            <p>O Product Owner conversa com clientes, usuários e especialistas para compreender problemas, resultados esperados e regras de negócio.</p>
+            <span class="example">Resultado no Scrum: novas hipóteses ou itens para o Product Backlog.</span>
+          </div>
+          <div class="info-card">
+            <h4>Questionários</h4>
+            <p>Perguntas abertas ou fechadas ajudam a coletar dados de muitos usuários e apoiar decisões de produto com evidências.</p>
+            <span class="example">Resultado no Scrum: dados para ordenar ou revisar itens do backlog.</span>
+          </div>
+          <div class="info-card">
+            <h4>Observação</h4>
+            <p>Observar o usuário em seu ambiente revela fluxos, dificuldades e necessidades que podem não aparecer nas conversas.</p>
+            <span class="example">Resultado no Scrum: oportunidades alinhadas ao Objetivo do Produto.</span>
+          </div>
+          <div class="info-card">
+            <h4>Workshops</h4>
+            <p>Sessões colaborativas aproximam Scrum Team e stakeholders para explorar problemas, alinhar expectativas e avaliar soluções.</p>
+            <span class="example">Atenção: workshop é uma prática complementar, não um evento oficial do Scrum.</span>
+          </div>
+          <div class="info-card">
+            <h4>Análise Documental</h4>
+            <p>Leis, contratos, relatórios e sistemas existentes revelam regras e restrições que precisam ser consideradas no Product Backlog.</p>
+            <span class="example">Resultado no Scrum: critérios, restrições ou novos itens do backlog.</span>
+          </div>
+          <div class="info-card">
+            <h4>Prototipação</h4>
+            <p>Esboços e telas navegáveis permitem testar hipóteses e obter feedback antes de investir na implementação.</p>
+            <span class="example">Resultado no Scrum: aprendizado para adaptar o Product Backlog.</span>
+          </div>
+        </div>
+
+        <div class="callout-box">
+          <strong>Inspeção e adaptação:</strong> combine técnicas, valide as descobertas com os stakeholders e adapte o Product Backlog. Na <strong>Sprint Review</strong>, o Scrum Team e os stakeholders inspecionam o resultado da Sprint e discutem o que fazer a seguir.
+        </div>
+
+        <h3>1.3 Product Backlog e Objetivo do Produto</h3>
+        <p>O <strong>Objetivo do Produto</strong> descreve o estado futuro que serve de alvo para o Scrum Team. O <strong>Product Backlog</strong> é a lista emergente e ordenada do que é necessário para melhorar o produto. O Product Owner é responsável por comunicar o objetivo e ordenar os itens para maximizar valor.</p>
+
+        <h3>1.4 User Stories e Critérios de Aceitação</h3>
+        <p>User Story é uma prática opcional para expressar uma necessidade pela perspectiva do usuário. Ela não é obrigatória no Scrum:</p>
+        <div class="formula-box">Como [Papel] ➔ Eu quero [Ação] ➔ Para [Benefício]</div>
+        <p>Os <strong>critérios de aceitação</strong> tornam o comportamento esperado claro e verificável. Eles são específicos de cada item e não substituem a <strong>Definition of Done</strong>, que representa o compromisso de qualidade aplicado ao Incremento.</p>
+
+        <h3>1.5 Refinamento, Ordenação e Validação</h3>
+        <p>O refinamento do Product Backlog é uma atividade contínua na qual os itens são divididos e detalhados. Product Owner e Developers colaboram para obter entendimento suficiente; durante o <strong>Sprint Planning</strong>, os Developers selecionam os itens com os quais trabalharão e criam o Sprint Backlog.</p>
+        <ul class="requirements-checklist">
+          <li><strong>Alinhado:</strong> contribuir para o Objetivo do Produto.</li>
+          <li><strong>Valioso:</strong> resolver um problema ou produzir um resultado relevante.</li>
+          <li><strong>Claro:</strong> ser compreendido pelo Product Owner e pelos Developers.</li>
+          <li><strong>Pequeno:</strong> poder ser concluído dentro de uma Sprint quando selecionado.</li>
+          <li><strong>Viável:</strong> considerar riscos, dependências, tecnologia e capacidade disponível.</li>
+          <li><strong>Verificável:</strong> possuir critérios de aceitação ou outra forma objetiva de validação.</li>
+          <li><strong>Ordenado:</strong> ter sua posição definida pelo Product Owner considerando valor, risco, dependências e aprendizado.</li>
+        </ul>
+      </section>
+
+      <!-- Capítulo 2 -->
+      <section id="capitulo2" class="chapter-card">
+        <h2>🏗️ Capítulo 2: Arquitetura e Design nas Sprints</h2>
+        <p>No Scrum, arquitetura e design evoluem junto com o produto. Os <strong>Developers</strong> decidem como transformar itens do Product Backlog em Incrementos, considerando qualidade, riscos técnicos e o Objetivo da Sprint.</p>
+
+        <div class="callout-box">
+          <strong>Decisão do Scrum Team:</strong> o Scrum não prescreve arquitetura. Monolito, microserviços e serverless são escolhas técnicas feitas conforme o contexto do produto, não etapas ou exigências do framework.
+        </div>
+        
+        <h3>2.1 Padrões Arquiteturais</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Arquitetura</th>
+                <th>O que é</th>
+                <th>Consideração para a Sprint</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Monolito</strong></td>
+                <td>Aplicação única contendo todo o código e módulos.</td>
+                <td>Pode reduzir a complexidade inicial e facilitar a entrega dos primeiros Incrementos.</td>
+              </tr>
+              <tr>
+                <td><strong>Microserviços</strong></td>
+                <td>Sistema dividido em pequenos serviços independentes.</td>
+                <td>Exige atenção a dependências, observabilidade e capacidade de entregar um Incremento integrado.</td>
+              </tr>
+              <tr>
+                <td><strong>Serverless</strong></td>
+                <td>Execução de código sob demanda gerenciada pela nuvem.</td>
+                <td>Pode acelerar experimentos, mas requer critérios claros de segurança, custo e operação.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>2.2 Trabalho Técnico no Product Backlog</h3>
+        <p>Refatorações, segurança, infraestrutura e redução de débito técnico podem aparecer no Product Backlog quando forem necessárias para melhorar o produto. A qualidade também é incorporada à <strong>Definition of Done</strong>; trabalho que não atende a essa definição não faz parte do Incremento.</p>
+      </section>
+
+      <!-- Capítulo 3 -->
+      <section id="capitulo3" class="chapter-card">
+        <h2>💻 Capítulo 3: Construindo um Incremento com Qualidade</h2>
+        <p>Durante a Sprint, os Developers criam o plano no <strong>Sprint Backlog</strong> e o adaptam diariamente para alcançar o <strong>Objetivo da Sprint</strong>. Código, testes, integração e documentação necessária fazem parte do mesmo trabalho de produzir valor.</p>
+
+        <h3>3.1 A Pirâmide de Testes</h3>
+        <p>A pirâmide de testes é uma prática complementar — não uma regra do Scrum — que ajuda o time a obter feedback técnico rápido e atender à Definition of Done:</p>
+        
+        <div class="flex-pyramid">
+          <div class="pyramid-level level-e2e">E2E (Poucos / Mais Lentos)</div>
+          <div class="pyramid-level level-integration">Integração (Quantidade Média)</div>
+          <div class="pyramid-level level-unit">Unitários (Muitos / Rápida Execução)</div>
+        </div>
+
+        <h3>3.2 Definition of Done e Incremento</h3>
+        <p>A <strong>Definition of Done</strong> descreve formalmente o estado do Incremento quando ele atende às medidas de qualidade exigidas para o produto. Ela cria transparência e entendimento compartilhado. Vários Incrementos podem ser criados em uma Sprint, e cada um deve ser utilizável e somar-se aos anteriores.</p>
+
+        <div class="callout-box">
+          <strong>Qualidade não é negociável:</strong> se um item não atende à Definition of Done, ele não pode ser apresentado como parte do Incremento nem ser liberado. O item retorna ao Product Backlog para consideração futura.
+        </div>
+      </section>
+
+      <!-- Capítulo 4 -->
+      <section id="capitulo4" class="chapter-card">
+        <h2>🚀 Capítulo 4: Entrega, DevOps e Feedback</h2>
+        <p>O Scrum exige um Incremento útil e utilizável, mas não obriga esperar o fim da Sprint para liberá-lo. A entrega pode ocorrer sempre que fizer sentido para o produto; a <strong>Sprint Review não é um portão de aprovação para deploy</strong>.</p>
+        
+        <div class="cards-grid">
+          <div class="info-card">
+            <h4>CI (Continuous Integration)</h4>
+            <p>Integração contínua automatiza compilação, análise e testes, oferecendo feedback rápido aos Developers e apoiando a Definition of Done.</p>
+          </div>
+          <div class="info-card">
+            <h4>CD (Continuous Deployment)</h4>
+            <p>Deploy contínuo automatiza a publicação de mudanças aprovadas. É uma prática DevOps complementar que pode tornar Incrementos disponíveis com mais frequência.</p>
+          </div>
+        </div>
+
+        <h3>4.1 Sprint Review e Evidências</h3>
+        <p>Na Sprint Review, Scrum Team e stakeholders inspecionam o resultado da Sprint, analisam mudanças no ambiente e colaboram sobre os próximos passos. Métricas de uso, desempenho, incidentes e feedback alimentam novas decisões e adaptações no Product Backlog.</p>
+      </section>
+
+      <!-- Capítulo 5 -->
+      <section id="capitulo5" class="chapter-card">
+        <h2>🔄 Capítulo 5: O Framework Scrum na Prática</h2>
+        <p>O Scrum Team é uma unidade coesa, multifuncional e autogerenciável formada por <strong>Product Owner, Scrum Master e Developers</strong>. Não existem subequipes ou hierarquias internas no Scrum Team.</p>
+
+        <h3>5.1 Responsabilidades</h3>
+        <div class="cards-grid">
+          <div class="info-card">
+            <h4>Product Owner</h4>
+            <p>É responsável por maximizar o valor do produto e pelo gerenciamento efetivo do Product Backlog.</p>
+          </div>
+          <div class="info-card">
+            <h4>Scrum Master</h4>
+            <p>É responsável por estabelecer o Scrum conforme definido no Guia e por melhorar a eficácia do Scrum Team.</p>
+          </div>
+          <div class="info-card">
+            <h4>Developers</h4>
+            <p>Criam o Sprint Backlog, adaptam o plano diariamente, incorporam qualidade e produzem um Incremento utilizável.</p>
+          </div>
+        </div>
+
+        <h3>5.2 Eventos da Sprint</h3>
+        <ul class="requirements-checklist">
+          <li><strong>Sprint:</strong> evento que contém todos os demais e transforma ideias em valor.</li>
+          <li><strong>Sprint Planning:</strong> define por que a Sprint é valiosa, o que pode ser feito e como o trabalho será realizado.</li>
+          <li><strong>Daily Scrum:</strong> evento de 15 minutos para os Developers inspecionarem o progresso rumo ao Objetivo da Sprint e adaptarem o plano.</li>
+          <li><strong>Sprint Review:</strong> inspeciona o resultado com os stakeholders e identifica adaptações futuras.</li>
+          <li><strong>Sprint Retrospective:</strong> planeja maneiras de aumentar qualidade e eficácia.</li>
+        </ul>
+
+        <h3>5.3 Artefatos e Compromissos</h3>
+        <p>Cada artefato possui um compromisso que aumenta transparência e foco:</p>
+        
+        <div class="kanban-preview">
+          <div class="kanban-col">Product Backlog<br>Objetivo do Produto</div>
+          <div class="kanban-col">Sprint Backlog<br>Objetivo da Sprint</div>
+          <div class="kanban-col done">Incremento<br>Definition of Done</div>
+        </div>
+
+        <div class="callout-box">
+          <strong>Scrum e Kanban:</strong> um quadro visual e limites de WIP podem complementar o Scrum, mas não substituem seus eventos, responsabilidades, artefatos ou compromissos.
+        </div>
+      </section>
+
+      <!-- Conclusão -->
+      <section id="conclusao" class="chapter-card">
+        <h2>🏁 Conclusão: Valor em Ciclos de Aprendizado</h2>
+        <p>No Scrum, o desenvolvimento não termina no deploy. Cada Sprint cria uma oportunidade de inspecionar resultados, aprender com usuários e stakeholders e adaptar o produto e a forma de trabalho. Objetivo do Produto, Product Backlog, Objetivo da Sprint, Incremento e Definition of Done conectam estratégia, execução e qualidade em um ciclo contínuo de entrega de valor.</p>
+      </section>
+
+      <footer class="footer">
+        <p>© Ciclo de Vida do Software com Scrum — Material Didático de Engenharia de Software</p>
+      </footer>
+
+    </main>
+  </div>
+
+</body>
+</html>
